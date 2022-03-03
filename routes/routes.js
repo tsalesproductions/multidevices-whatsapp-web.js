@@ -6,8 +6,9 @@ var cors = require('cors')
 app.use(cors())
 
 const clients = new(require("../controllers/clients"))
+      clients.init();
 
-clients.init();
+const auth = require('../middleware/auth');
 
 const sendMessage = (number = null, text = null, cl) => {
     number = number.replace('@c.us', '');
@@ -16,7 +17,11 @@ const sendMessage = (number = null, text = null, cl) => {
     cl.sendMessage(number, message);
 }
 
-app.get("/", (req, res) => {
+app.get("/",  (req, res) => {
+    res.json({message: 'ok'});
+});
+
+app.get("/teste/:name", auth, (req, res) => {
     res.json({message: 'ok'});
 });
 
