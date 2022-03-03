@@ -12,25 +12,27 @@ module.exports = class clients{
         return usersStatus;
     }
     init(){
+        let i = -1;
         for(let c of data){
+            i++;
             let index = null;
 
             const cl = new Client({
                 authStrategy: new LocalAuth({ clientId: "client-"+c.nome })
             });
 
-            index = usersStatus.findIndex(s => s.nome === usersStatus[c.nome]);
 
             if(index <= 0){
                 usersStatus.push({
                     name: c.nome,
                     status: null
                 })
-
-                index = usersStatus.findIndex(s => s.nome === usersStatus[c.nome]);
             }
 
+            index = i;
+
             cl.on('qr', async (qr) => {
+            
                 usersStatus[index].status = 0
                 usersStatus[index].qr = await qrcodeP.toDataURL(qr);
                 usersStatus[index].msg = "Aguardando leitura do QR";
