@@ -26,8 +26,6 @@ app.get("/send/:name", (req, res) => {
 
     if(!name || !phone || !text) return res.json({status: "client or number or text not found"});
 
-    console.log("ok")
-
     let data = new(require("./controllers/clients"))().getClients()
 
     let find = data.find( f=> f.name === name);
