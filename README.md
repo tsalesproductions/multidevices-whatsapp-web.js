@@ -18,7 +18,7 @@ Esse projeto é um complemento da biblioteca https://wwebjs.dev/guide/#installat
 
 
 ### O que está por vir?
-Só deus sabe...
+Só Deus sabe...
 
 
 ### Contribuição
