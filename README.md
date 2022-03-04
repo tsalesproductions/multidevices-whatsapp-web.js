@@ -14,7 +14,7 @@ Esse projeto é um complemento da biblioteca https://wwebjs.dev/guide/#installat
 - Aguarde os módulos carregarem e o qr ser gerado.
 - Após ser gerado, leia e aguarde uns instantes até que a api retorne `{status: "ready"} || {status: 1}`
 - Após: acesse a rota `send/:name` onde o noma é o nome do cliente passando os parametros, cujo é o telefone de contato contendo o 55 na frente e o texto. Exemplo a se usar: `/send/hardd?phone=552170707070&text=7070 se não der, cê tenta de novo`.
-- A api caso retorne: `{"status":"aguardando autenticação"}`, significa que a mensagem foi enviada, confirme no destinatário.
+- A api caso retorne: `{"status":"mensagem enviada"}`, significa que a mensagem foi enviada, confirme no destinatário.
 
 
 ### O que está por vir?
